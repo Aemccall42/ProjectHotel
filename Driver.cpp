@@ -1,3 +1,7 @@
+/*This progran is about Hotel occupancy where user can find which locaton and hotel they want to stay 
+and if it is available? */
+
+
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
