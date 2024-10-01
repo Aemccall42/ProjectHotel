@@ -9,24 +9,21 @@ using namespace std;
 
 HotelChain::HotelChain() : room_Count(0), location_Count(0){}
 
-// destructor for the HotelChain class
-//dynamically allocated memory cleans up
+//destructor for the HotelChain class dynamically allocated memory cleans up
 HotelChain::~HotelChain(){
 
     //Loop through the array of room pointers and delete each room object
     for (int i = 0; i < room_Count; ++i){
-        delete rooms[i];    //clean up
+        delete[] rooms;    //MAKE SURE THIS DOES NOT CAUSE MEMORY LEAK
     }
 
-    // //Loop through the array of room pointers and delete each room object
+    //Loop through the array of room pointers and delete each room object
     for (int i = 0; i < location_Count; ++i){
-        delete locations[i];    //clean up
+        delete[] locations;    //MAKE SURE THIS DOES NOT CAUSE MEMORY LEAK
     }
 }
 
-//load room and location data from a file
-//The filename is provided as a parameter
-
+//load room and location data from a file, The filename is provided as a parameter
 void HotelChain:: loadFromFile(const string& filename) {
     ifstream file(filename);    //open the file for reading
     if (!file) {
@@ -44,11 +41,11 @@ void HotelChain:: loadFromFile(const string& filename) {
 // display all rooms (if needed	)
 //This function is currently a placeholder and should be implemented as needed.
 
-void HotelChain::displayRooms() const{
+void HotelChain::displayAvailableRooms() const{
     cout << " Display all rooms: " << endl;
-    for (int i = 0; i < room_count; ++1) {
+    for (int i = 0; i < room_Count; ++1) {
 
-        rooms[i]->displayDetails();         // call a method to display details of each room
+        rooms[i].displayDetails();         // call a method to display details of each room
     }
 }
 
