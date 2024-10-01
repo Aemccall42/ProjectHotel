@@ -65,10 +65,7 @@ while (true) {
 
 
 
-cout<<"Which room would you like to stay in?"<<endl;
-//from there... it displays the availible rooms.
-//then the user inputs a room
-cin>> roomNumber; 
+
 
 
 
