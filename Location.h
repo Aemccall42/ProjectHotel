@@ -2,5 +2,4 @@
 #define LOCATION_H
 
 
-
 #endif

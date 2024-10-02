@@ -2,10 +2,23 @@
 
 using namespace std;
 
-/*
+ // constructor FIX
+Rooms::Rooms() : occupied(0){}
 
+ //destructor
+Rooms::~Rooms()
 
-*/
+//getter for priv variable
+void Rooms::getInfo()
+{
+    return occupied;
+}
+
+//setter for priv variable,, input MUST BE 0 OR 1
+void Rooms::setInfo(bool newInfo)
+{
+    occupied = newInfo;
+}
 
 class rooms_occupation 
 //Stores the room number and whether it is occupied or not

@@ -7,8 +7,8 @@
 class HotelChain
 {
 private:
-    Room* rooms[100];  //Array of pointers to room objects
-    Location* locations[10];    // Array of pointers to location object
+    int* rooms = new int[100];//Array of pointers to room objects
+    int* Location = new int[10];  // Array of pointers to location object
 
     int room_Count;     //number of rooms
     int location_Count ;    // number of locations
