@@ -1,5 +1,8 @@
-/*This progran is about Hotel occupancy where user can find which locaton and hotel they want to stay 
-and if it is available? */
+    /*
+    Names: Jackson Whitworth,
+    Purpose: This progran is about Hotel occupancy where user can find which locaton and hotel they want to stay 
+    and if it is available? 
+    */
 
 
 #include <iostream>
@@ -8,9 +11,8 @@ and if it is available? */
 #include "HotelChain.h"     // Include the header for hotelchain
 #include "Rooms.h"  // include the header for rooms
 using namespace std;
-/* */
 
-void displayMenue()
+void displayMenu()
 {
     cout << "\nWelcome to exUtopia Hotel!" << endl;
     cout << "Please choose and option: " << endl;
@@ -25,12 +27,11 @@ void displayMenue()
 
 int main()
 {
- //tbd
 HotelChain hotelChain;  // create an instance of Hotelchain
 hotelChain.loadFromFile("rooms.txt");   //load room data from the file
 
 while (true) {
-    displayMenue()  ;    //Display the menu
+    displayMenu()  ;    //Display the menu
     int choice;
     cout << "Enter your choice: ";
     cin >> choice;
@@ -45,7 +46,7 @@ while (true) {
 
     case 2: 
         cout << "\nAvailable Rooms: " << endl;
-        hotelChain.displayAvailableRooms(); // display avaible rooms
+        hotelChain.displayAvailableRooms(); // display available rooms
         
         break;
     

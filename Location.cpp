@@ -16,7 +16,7 @@ class Location //location class
 {
 
 public:
-int loction_count= 6;
+int location_count= 6;
 int room_Count;
 string* locations; //Contains 6 location strings.
 
@@ -24,7 +24,8 @@ string* locations; //Contains 6 location strings.
 //constructor
 Location(string x, int y)
 {
-locations[numLocations]=x; // *** this actually might need to be just a string and not an array since each object gets a string ***
+//locations[location_count]=x; // *** this actually might need to be just a string and not an array since each object gets a string ***
+*locations=x;
 room_Count=y;
 
 }
@@ -43,8 +44,8 @@ int main()
     Location Loc4("Crossville", 50);
     Location Loc5("Murfreesboro", 50);
     Location Loc6("Memphis", 50);
-
-    displayLocations()
+    
+void displayLocations()
     {
         cout<<"1. "<< Loc1.locations <<endl;
         cout<<"2. "<< Loc2.locations <<endl;
@@ -55,7 +56,8 @@ int main()
 
     }
 
-}
 
+}
+  
 
 #endif

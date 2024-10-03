@@ -43,29 +43,7 @@ void HotelChain:: loadFromFile(const string& filename) {
 
 void HotelChain::displayAvailableRooms() const{
     cout << " Display all rooms: " << endl;
-    for (int i = 0; i < room_Count; ++1) {
-
-        rooms[i].displayDetails();         // call a method to display details of each room
+    for (int i = 0; i < room_Count; ++i) {
+        rooms[i]->displayDetails();        // call a method to display details of each room
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-
-
-
-*/
-   
-
-

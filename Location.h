@@ -1,6 +1,6 @@
 #ifndef LOCATION_H
 #define LOCATION_H
-#include "Location.cpp";
+#include "Location.cpp"
 
 class Location
 {
@@ -13,6 +13,8 @@ public:
 Location(); //constructor
 ~Location(); //destructor
 
+
+void displayLocations();
 
 
 
