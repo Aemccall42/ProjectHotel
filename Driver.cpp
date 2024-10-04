@@ -1,7 +1,7 @@
     /*
-    Names: Jackson Whitworth,
-    Purpose: This progran is about Hotel occupancy where user can find which locaton and hotel they want to stay 
-    and if it is available? 
+    Names: Jackson Whitworth, INSERT NAMES HERE
+    Purpose: This program is about Hotel occupancy where user can find which locaton and hotel they want to stay 
+    and if it is available
     */
 
 

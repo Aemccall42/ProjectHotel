@@ -6,22 +6,19 @@ class Rooms
 {
     private:
         bool occupied;
-
+        int num;
     public:
-    // constructor, finish
+    //constructor
     Rooms();
-
-    //destructor, finish
+    //alt constructor to set price or occupancy from file reading
+    Rooms(double roomPrice);  
+    //destructor
     ~Rooms();
 
-    //getter for priv variable
-    bool getInfo();
-
-    //setter for priv variable,, input MUST BE 0 OR 1
-    void setInfo(bool newInfo)
-    {
-        occupied = newInfo;
-    }
+    //func prototypes
+    bool getOccupied() const;
+    double getPrice() const;
+    void displayDetails() const;
 };
 
 #endif

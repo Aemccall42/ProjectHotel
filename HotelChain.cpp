@@ -4,22 +4,16 @@
 
 using namespace std;
 
-// Constructor for the HotelChain class
-// Intitializes room count and location count to 0
-
-HotelChain::HotelChain() : room_Count(0), location_Count(0){}
+//updated constructor
+HotelChain::HotelChain() : location_Count(0){}
 
 //destructor for the HotelChain class dynamically allocated memory cleans up
-HotelChain::~HotelChain(){
-
+HotelChain::~HotelChain()
+{
     //Loop through the array of room pointers and delete each room object
-    for (int i = 0; i < room_Count; ++i){
-        delete[] rooms;    //MAKE SURE THIS DOES NOT CAUSE MEMORY LEAK
-    }
-
-    //Loop through the array of room pointers and delete each room object
-    for (int i = 0; i < location_Count; ++i){
-        delete[] locations;    //MAKE SURE THIS DOES NOT CAUSE MEMORY LEAK
+    for (int i = 0; i < location_Count; ++i)
+    {
+        delete[] locations;    //should not cause memory leak because each location will call its own destructor to destroy room arrays
     }
 }
 
@@ -32,18 +26,55 @@ void HotelChain:: loadFromFile(const string& filename) {
 
         return;     // exits the function
     }
+    string locationName;
+    double roomPrice;
+    while (file >> locationName) 
+    {
+        Location* newLocation = new Location(locationName);
+        int numRooms;
+        file >> numRooms;
+
+        for (int i = 0; i < numRooms; ++i) 
+        {
+            file >> roomPrice;
+            Rooms* newRoom = new Rooms(roomPrice);
+            newLocation->addRoom(newRoom);
+        }
+
+        addLocation(*newLocation);
+    }
+
+    file.close();  // Close the file
 }
 
-//Implement file reading logic here	
-//you would typically read data from the file and initialize room and location objects
-// Ex: read room details and create room objects then add them to the room array
 
-// display all rooms (if needed	)
-//This function is currently a placeholder and should be implemented as needed.
 
-void HotelChain::displayAvailableRooms() const{
-    cout << " Display all rooms: " << endl;
-    for (int i = 0; i < room_Count; ++i) {
-        rooms[i]->displayDetails();        // call a method to display details of each room
+//add location to chain (might be redundant?)
+void HotelChain::addLocation(const Location& location) 
+{
+    if (location_Count < 6) 
+    {
+        locations[location_Count] = new Location(location);
+        ++location_Count;
+    } 
+    else 
+        cout << "Hotel chain has reached the maximum number of locations." << endl;
+}
+
+//display location list
+void HotelChain::displayLocations() const 
+{
+    cout << "Hotel Chain Locations:" << endl;
+    for (int i = 0; i < location_Count; ++i) 
+    {
+        cout << locations[i]->getLocationName() << endl;
+    }
+}
+//lists all rooms in locations
+void HotelChain::displayAvailableRooms() const 
+{
+    for (int i = 0; i < location_Count; ++i) 
+    {
+        locations[i]->displayRooms();
     }
 }

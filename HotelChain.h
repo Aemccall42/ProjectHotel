@@ -3,14 +3,11 @@
 
 #include "Rooms.h"
 #include "Location.h"
-
+//hotelchain list contains each hotel, at most 6
 class HotelChain
 {
 private:
-    Rooms* rooms[100];//Array of pointers to room objects
     Location* locations[6];  // Array of pointers to location object
-
-    int room_Count;     //number of rooms
     int location_Count ;    // number of locations
 
 public:
