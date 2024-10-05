@@ -1,5 +1,5 @@
     /*
-    Names: Jackson Whitworth, INSERT NAMES HERE
+    Names: Jackson Whitworth, Abigail McCall, Khushbu Joshi, 
     Purpose: This program is about Hotel occupancy where user can find which locaton and hotel they want to stay 
     and if it is available
     */
