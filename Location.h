@@ -1,7 +1,7 @@
 #ifndef LOCATION_H
 #define LOCATION_H
 
-//including rooms so that each hotel has itws own room list
+//including rooms so that each hotel has its own room list
 #include "Rooms.h"
 #include <string>
 using namespace std;
