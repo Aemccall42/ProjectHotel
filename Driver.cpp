@@ -15,7 +15,7 @@ using namespace std;
 void displayMenu()
 {
     cout << "\nWelcome to exUtopia Hotel!" << endl;
-    cout << "Please choose an option: " << endl;
+    cout << "Please choose and option: " << endl;
     cout << "1. View Locations" << endl ;
     cout << "2. View Available Rooms " << endl;
     cout << "3. Exit " << endl;
