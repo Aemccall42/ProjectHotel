@@ -47,8 +47,6 @@ void HotelChain:: loadFromFile(const string& filename) {
     file.close();  // Close the file
 }
 
-
-
 //add location to chain (might be redundant?)
 void HotelChain::addLocation(const Location& location) 
 {

@@ -21,7 +21,7 @@ public:
     ~Location(); //destructor
 
     //prototypes list
-    void displayLocations() const;
+    void displayLocation() const;
     void addRoom(Rooms* room);
     void displayRooms() const;
     string getLocationName() const;
