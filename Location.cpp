@@ -4,17 +4,18 @@
 #include "Location.h"
 using namespace std;
 
+//main constructor
+Location::Location() : locationName("Unknown"), roomCount(0) {}
+
+//alt constructor for reading in from file?
+Location::Location(const std::string& name) : locationName(name), roomCount(0) {}
+
 //destructor for room pointer list to avoid mem leak
 Location::~Location() 
 {
     for (int i = 0; i < roomCount; ++i)
         delete rooms[i];
 }
-//main constructor
-Location::Location() : locationName("Unknown"), roomCount(0) {}
-
-//alt constructor for reading in from file?
-Location::Location(const std::string& name) : locationName(name), roomCount(0) {}
 
 //adds room (use for reading in from file?)
 void Location::addRoom(Rooms* room) 

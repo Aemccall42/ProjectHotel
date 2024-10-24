@@ -4,6 +4,7 @@
 //including rooms so that each hotel has itws own room list
 #include "Rooms.h"
 #include <string>
+#include <iostream>
 using namespace std;
 class Location
 {
@@ -11,7 +12,7 @@ class Location
 private:
     string locationName;  // Name of the location (e.g., city)
     Rooms* rooms[100];         // Array of pointers to Room objects (max 100 rooms per location)
-    int roomCount; 
+    int roomCount;          //number of rooms in the location
 
 public:
 
@@ -26,4 +27,4 @@ public:
     void displayRooms() const;
     string getLocationName() const;
 };
-#endif
+#endif     //Location_H
